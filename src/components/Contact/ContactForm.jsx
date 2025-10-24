@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -11,31 +12,79 @@ const ContactForm = () => {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+  const [statusMessage, setStatusMessage] = useState('')
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     })
+    if (submitStatus) {
+      setSubmitStatus(null)
+      setStatusMessage('')
+    }
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus(null)
+    setStatusMessage('')
 
-    // Simula envío (reemplazar con backend real)
-    setTimeout(() => {
-      setIsSubmitting(false)
-      alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+    try {
+      // ✅ SOLUCIÓN: Usar variable de entorno de React
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+
+      console.log('📤 Enviando datos al backend:', formData)
+
+      const response = await axios.post(`${API_URL}/contacto/enviar`, formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout: 15000
       })
-    }, 2000)
+
+      if (response.data.success) {
+        setSubmitStatus('success')
+        setStatusMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.')
+        
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+        
+        console.log('✅ Mensagem enviada com sucesso:', response.data.messageId)
+      } else {
+        throw new Error(response.data.message || 'Error al procesar la solicitud')
+      }
+
+    } catch (error) {
+      console.error('❌ Erro ao enviar formulário:', error)
+      setSubmitStatus('error')
+      
+      if (error.response) {
+        const serverError = error.response.data
+        if (serverError.errors) {
+          const errorMessages = serverError.errors.map(err => err.message).join(', ')
+          setStatusMessage(`Erros no formulário: ${errorMessages}`)
+        } else {
+          setStatusMessage(serverError.message || 'Mensagem de erro no servidor ao processar')
+        }
+      } else if (error.request) {
+        setStatusMessage('Não foi possível conectar ao servidor. Verifique se o backend está em execução. http://localhost:5000')
+      } else if (error.code === 'ECONNABORTED') {
+        setStatusMessage('A conexão demorou muito. Tente novamente.')
+      } else {
+        setStatusMessage('Erro inesperado. Tente novamente.')
+      }
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const subjects = [
@@ -64,6 +113,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full glass-effect rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
             placeholder="Seu nome completo"
+            disabled={isSubmitting}
           />
         </div>
 
@@ -79,6 +129,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full glass-effect rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
             placeholder="Nome da empresa"
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -98,6 +149,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full glass-effect rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
             placeholder="seu@email.com"
+            disabled={isSubmitting}
           />
         </div>
 
@@ -113,6 +165,7 @@ const ContactForm = () => {
             onChange={handleChange}
             className="w-full glass-effect rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
             placeholder="(41) 99999-9999"
+            disabled={isSubmitting}
           />
         </div>
       </div>
@@ -129,6 +182,7 @@ const ContactForm = () => {
           value={formData.subject}
           onChange={handleChange}
           className="w-full glass-effect rounded-lg px-4 py-3 text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
+          disabled={isSubmitting}
         >
           <option value="" disabled className="text-gray-400">
             Selecione um assunto
@@ -159,8 +213,42 @@ const ContactForm = () => {
           onChange={handleChange}
           className="w-full glass-effect rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300 resize-none"
           placeholder="Descreva sua necessidade ou projeto..."
+          disabled={isSubmitting}
         />
       </div>
+
+      {/* Mensajes de Estado */}
+      {submitStatus === 'success' && (
+        <div className="p-4 bg-green-500/20 border border-green-500 rounded-lg">
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <div>
+              <p className="text-green-400 font-semibold">Sucesso!</p>
+              <p className="text-green-300 text-sm">{statusMessage}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {submitStatus === 'error' && (
+        <div className="p-4 bg-red-500/20 border border-red-500 rounded-lg">
+          <div className="flex items-center">
+            <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mr-3">
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+            <div>
+              <p className="text-red-400 font-semibold">Erro ao enviar mensagem</p>
+              <p className="text-red-300 text-sm">{statusMessage}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Submit Button */}
       <button

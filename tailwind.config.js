@@ -5,11 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
 
-    safelist: [
+  safelist: [
     'bg-jiga-blue',
     'bg-jiga-green',
     'bg-security-orange',
-    'text-jiga-blue',
+    'text-jiga-blue', 
     'text-jiga-green',
     'text-security-orange',
     'border-jiga-blue',
@@ -33,7 +33,7 @@ export default {
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite', // ✅ Este nombre está bien
         'typewriter': 'typewriter 2s steps(11) forwards',
         'bounce-slow': 'bounce 3s infinite',
         'fade-in': 'fadeIn 0.5s ease-in-out',
@@ -55,7 +55,7 @@ export default {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        pulseGlow: {
+        'pulse-glow': {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
         },
