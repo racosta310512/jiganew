@@ -120,12 +120,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <div className="text-gray-400 text-sm sm:text-base">
-              © 2025 Jiga Soluções Ltda. Todos os direitos reservados.
-            </div>
-
+          <div className="flex flex-col items-center space-y-3 md:space-y-2">
             {/* Contact Info */}
             <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm sm:text-base text-gray-400">
               <div className="flex items-center space-x-2">
@@ -138,14 +133,10 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Back to Top */}
-            <button
-              onClick={scrollToTop}
-              className="glass-effect rounded-lg px-4 py-2 sm:px-6 sm:py-3 text-white hover:scale-105 transition-all duration-300 flex items-center space-x-2"
-            >
-              <span>Voltar ao Topo</span>
-              <span>↑</span>
-            </button>
+            {/* Copyright */}
+            <div className="text-gray-400 text-sm sm:text-base text-center">
+              © 2025 Jiga Soluções Ltda. Todos os direitos reservados.
+            </div>
           </div>
         </div>
       </div>

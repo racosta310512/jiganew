@@ -15,6 +15,7 @@
     "@tsparticles/slim": "^3.9.1",
     "chart.js": "^4.5.1",
     "gsap": "^3.12.5",
+    "lucide-react": "^0.547.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.8.1",
