@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '../../hooks/useScrollAnimation'
-import logo1 from '../../assets/logo1.png'
+import logo1 from '../../assets/logojiga1.png'
 
 const Footer = () => {
   const footerRef = useScrollAnimation({
