@@ -4,6 +4,21 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
+    safelist: [
+    'bg-jiga-blue',
+    'bg-jiga-green',
+    'bg-security-orange',
+    'text-jiga-blue',
+    'text-jiga-green',
+    'text-security-orange',
+    'border-jiga-blue',
+    'border-jiga-green',
+    'border-security-orange',
+    'bg-neon-purple',
+    'bg-electric-yellow',
+  ],
+
   theme: {
     extend: {
       colors: {

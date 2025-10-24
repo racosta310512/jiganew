@@ -99,20 +99,20 @@ const InfrastructureSection = () => {
         </div>
 
         {/* Certifications */}
-        <div className="mt-16 glass-effect rounded-2xl p-8 max-w-4xl mx-auto text-center">
+        <div className="mt-16 glass-effect rounded-2xl p-8 max-w-6xl mx-auto text-center">
           <h3 className="text-2xl font-bold text-jiga-green mb-6">
             Certificações e Qualificações
           </h3>
-          <div className="flex flex-wrap justify-center gap-8">
+          <div className="flex flex-wrap justify-between gap-8">
             {[
               { name: "Nexans", type: "Cabeamento Estruturado" },
               { name: "Remaster", type: "Piso Elevado" },
               { name: "Microsoft", type: "Gold Partner" },
               { name: "Linux Foundation", type: "Certified" }
             ].map((cert, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="flex-1 max-w-xs text-center">
                 <div className="w-16 h-16 glass-effect rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="font-bold text-jiga-blue">✓</span>
+                  <span className="font-bold text-jiga-green">✓</span>
                 </div>
                 <div className="font-semibold text-white">{cert.name}</div>
                 <div className="text-sm text-gray-400">{cert.type}</div>
@@ -120,6 +120,7 @@ const InfrastructureSection = () => {
             ))}
           </div>
         </div>
+
       </div>
     </section>
   )

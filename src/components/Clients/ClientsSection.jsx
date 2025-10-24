@@ -37,12 +37,31 @@ const ClientsSection = () => {
   ]
 
   const clientLogos = [
-    { name: "Client 1", sector: "Indústria" },
-    { name: "Client 2", sector: "Comércio" },
-    { name: "Client 3", sector: "Serviços" },
-    { name: "Client 4", sector: "Tecnologia" },
-    { name: "Client 5", sector: "Educação" },
-    { name: "Client 6", sector: "Saúde" }
+    { name: "Gritsch", logo: "/logos/gritsch.jpg" },
+    { name: "Happy Kids", logo: "/logos/happykids.jpg" },
+    { name: "Remis Latinamerica", logo: "/logos/remis.jpg" },
+    { name: "Fotest Innovations", logo: "/logos/fotest.jpg" },
+    { name: "Facop", logo: "/logos/facop.jpg" },
+    { name: "Corsul", logo: "/logos/corsul.jpg" },
+    { name: "Bunzl", logo: "/logos/bunzl.jpg" },
+    { name: "Agua Marinha", logo: "/logos/aguamarina.png" },
+    { name: "Alvorada", logo: "/logos/alvorada.png" },
+    { name: "Associaçao Brasil", logo: "/logos/associacaobrasil.png" },
+    { name: "Axson Revocoat", logo: "/logos/axson.png" },
+    { name: "CBEMI", logo: "/logos/cbemi.png" },
+    { name: "DPM", logo: "/logos/dpm.png" },
+    { name: "FACIAPO", logo: "/logos/faciapo.png" },
+    { name: "Gutierrez Paula Munhoz", logo: "/logos/gutierrez.png" },
+    { name: "Hospital Vita", logo: "/logos/hospitalvita.png" },
+    { name: "MALVEZZI & ZELA", logo: "/logos/malvezzi.png" },
+    { name: "Marcio Pinheiro", logo: "/logos/marciopinheiro.png" },
+    { name: "Neuro Concept", logo: "/logos/neuroconcep.png" },
+    { name: "Paraiso Gold", logo: "/logos/paraiso2.png" },
+    { name: "Princess Hair", logo: "/logos/princesshair.png" },
+    { name: "RACCO", logo: "/logos/racco.png" },
+    { name: "Sigma", logo: "/logos/sigma.png" },
+    { name: "Unisys", logo: "/logos/unisys.png" },
+    { name: "Zonari Letchacoski", logo: "/logos/zonari.png" }
   ]
 
   return (

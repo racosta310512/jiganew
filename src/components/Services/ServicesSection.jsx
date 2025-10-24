@@ -49,7 +49,7 @@ const ServicesSection = () => {
               "Internet, e-mail",
               "Automação comercial e industrial", 
               "Controle de acesso e monitoramento CFTV",
-              "Suporte a Sistemas operacionais Microsoft e Linux"
+              
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-jiga-green rounded-full"></div>

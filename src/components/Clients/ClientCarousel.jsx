@@ -9,7 +9,8 @@ const ClientCarousel = ({ logos }) => {
     const items = carouselRef.current?.querySelectorAll('.carousel-item')
     if (!items) return
 
-    gsap.fromTo(items,
+    gsap.fromTo(
+      items,
       {
         opacity: 0,
         y: 30,
@@ -21,7 +22,7 @@ const ClientCarousel = ({ logos }) => {
         scale: 1,
         duration: 0.6,
         stagger: 0.1,
-        ease: "back.out(1.7)"
+        ease: 'back.out(1.7)'
       }
     )
   }, [])
@@ -44,7 +45,7 @@ const ClientCarousel = ({ logos }) => {
     <div className="relative">
       {/* Carousel */}
       <div ref={carouselRef} className="overflow-hidden">
-        <div 
+        <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
         >
@@ -56,22 +57,26 @@ const ClientCarousel = ({ logos }) => {
                     key={logoIndex}
                     className="carousel-item glass-effect rounded-xl p-6 flex flex-col items-center justify-center transform hover:scale-110 transition-all duration-300"
                   >
-                    {/* Logo Placeholder */}
-                    <div className="w-16 h-16 bg-gradient-to-br from-jiga-blue to-jiga-green rounded-full flex items-center justify-center mb-3">
-                      <span className="text-white font-bold text-sm">
-                        {logo.name.split(' ').map(w => w[0]).join('')}
-                      </span>
+                    {/* Logo o inicial */}
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-jiga-blue to-jiga-green flex items-center justify-center mb-3 overflow-hidden hover:shadow-lg transition-all duration-300">
+                      {logo.logo ? (
+                        <img
+                          src={logo.logo}
+                          alt={logo.name}
+                          className="object-contain w-full h-full"
+                        />
+                      ) : (
+                        <span className="text-white font-bold text-lg">
+                          {logo.name.split(' ').map((w) => w[0]).join('')}
+                        </span>
+                      )}
                     </div>
-                    
+
                     {/* Client Name */}
                     <div className="text-white font-semibold text-center mb-1">
                       {logo.name}
                     </div>
-                    
-                    {/* Sector */}
-                    <div className="text-gray-400 text-xs text-center">
-                      {logo.sector}
-                    </div>
+
                   </div>
                 ))}
               </div>
@@ -87,7 +92,9 @@ const ClientCarousel = ({ logos }) => {
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-jiga-green scale-125' : 'bg-gray-600 hover:bg-gray-400'
+              index === currentSlide
+                ? 'bg-jiga-green scale-125'
+                : 'bg-gray-600 hover:bg-gray-400'
             }`}
           />
         ))}
@@ -95,13 +102,17 @@ const ClientCarousel = ({ logos }) => {
 
       {/* Navigation Arrows */}
       <button
-        onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}
+        onClick={() =>
+          setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+        }
         className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 glass-effect rounded-full w-8 h-8 flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
       >
         ‹
       </button>
       <button
-        onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}
+        onClick={() =>
+          setCurrentSlide((prev) => (prev + 1) % slides.length)
+        }
         className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 glass-effect rounded-full w-8 h-8 flex items-center justify-center text-white hover:scale-110 transition-all duration-300"
       >
         ›

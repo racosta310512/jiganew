@@ -22,8 +22,8 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    // Simulate form submission
+
+    // Simula envío (reemplazar con backend real)
     setTimeout(() => {
       setIsSubmitting(false)
       alert('Mensagem enviada com sucesso! Entraremos em contato em breve.')
@@ -66,7 +66,7 @@ const ContactForm = () => {
             placeholder="Seu nome completo"
           />
         </div>
-        
+
         <div>
           <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
             Empresa
@@ -100,7 +100,7 @@ const ContactForm = () => {
             placeholder="seu@email.com"
           />
         </div>
-        
+
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
             Telefone
@@ -128,11 +128,17 @@ const ContactForm = () => {
           required
           value={formData.subject}
           onChange={handleChange}
-          className="w-full glass-effect rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
+          className="w-full glass-effect rounded-lg px-4 py-3 text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-jiga-green transition-all duration-300"
         >
-          <option value="">Selecione um assunto</option>
+          <option value="" disabled className="text-gray-400">
+            Selecione um assunto
+          </option>
           {subjects.map((subject, index) => (
-            <option key={index} value={subject}>
+            <option
+              key={index}
+              value={subject}
+              className="text-white bg-jiga-blue"
+            >
               {subject}
             </option>
           ))}
