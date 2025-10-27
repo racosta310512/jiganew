@@ -146,7 +146,7 @@ const ClientsSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
               { number: "50+", label: "Clientes Ativos" },
-              { number: "15+", label: "Anos no Mercado" },
+              { number: "30+", label: "Anos no Mercado" },
               { number: "98%", label: "Satisfação" },
               { number: "24/7", label: "Suporte" }
             ].map((stat, index) => (
