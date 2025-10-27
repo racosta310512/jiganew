@@ -49,6 +49,8 @@ const ServicesSection = () => {
               "Internet, e-mail",
               "Automação comercial e industrial", 
               "Controle de acesso e monitoramento CFTV",
+              "VPN",
+              "Outsourcing de Impressão",
               
             ].map((service, index) => (
               <div key={index} className="flex items-center space-x-3">

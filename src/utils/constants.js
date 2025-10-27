@@ -6,7 +6,8 @@ export const SERVICES_DATA = [
     services: [
       "Configuração de Servidores e Storage",
       "Balanceamento de Links", 
-      "Cabeamento Estruturado CAT-6"
+      "Cabeamento Estruturado CAT-6",
+      "Servidores em Nuvem"
     ],
     icon: "🖥️",
     metrics: "99.9% Uptime",
@@ -41,11 +42,14 @@ export const SERVICES_DATA = [
 ]
 
 export const MILESTONES = [
-  { year: '2008', event: 'Fundação - Foco em soluções confiáveis' },
-  { year: '2012', event: 'Expansão serviços cloud' },
-  { year: '2015', event: 'Certificações Nexans/Remaster' },
-  { year: '2020', event: 'Especialização em Green Datacenter' },
-  { year: '2024', event: 'Líder em infraestrutura TI em Curitiba' }
+  { year: '1993', event: 'Fundação da empresa em Florianópolis/SC com o nome Jiga Sistemas de Manutenção Ltda' },
+  { year: '1997', event: 'Expansão da atuação para o estado do Paraná, em Curitiba' },
+  { year: '1997', event: 'Expansão para serviços de Internet como Provedor JSOL - Jiga Soluções ON Line' },
+  { year: '2000', event: 'Primeiro projeto de Soluções Integradas - Rede de Ensino do estado do Paraná' },
+  { year: '2012', event: 'Certificações Nexans /Remaster' },
+  { year: '2017', event: 'Especialização em Green Datacenter' },
+  { year: '2022', event: 'Expansão para Cloud Services' },      
+  { year: '2025', event: 'Integração Engenharia/Automação/Cloud Services' }
 ]
 
 export const PRODUCTS = [
@@ -53,8 +57,8 @@ export const PRODUCTS = [
     id: 1,
     name: "Servidores",
     category: "infraestrutura",
-    description: "Servidores de alta performance",
-    specs: ["Processadores Intel Xeon", "128GB RAM", "SSD NVMe"],
+    description: "Servidores de Alta Performance / Cluster para:",
+    specs: ["Servidores de Arquivo", "Servidores de Aplicação", "Cloud Backup"],
     color: "jiga-blue"
   },
   {

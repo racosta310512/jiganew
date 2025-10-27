@@ -28,7 +28,7 @@ const ProjectsSection = () => {
       category: "virtualizacao", 
       status: "andamento",
       description: "Virtualização e consolidação de ambiente físico para virtual",
-      technologies: ["VMware", "Hyper-V", "Storage SAN"],
+      technologies: ["VMware", "Hyper-V", "PROXMOX VE", "Storage SAN"],
       metrics: "60% menos servidores físicos",
       color: "jiga-blue"
     },
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       category: "nuvem",
       status: "andamento", 
       description: "Migração completa de infraestrutura local para nuvem híbrida",
-      technologies: ["AWS", "Azure", "Hybrid Cloud"],
+      technologies: ["UNDER", "Hybrid Cloud", "Parceiros US"],
       metrics: "30% redução de custos",
       color: "electric-yellow"
     },
@@ -68,7 +68,7 @@ const ProjectsSection = () => {
       category: "sistemas",
       status: "completo",
       description: "Implementação de ambiente Linux corporativo com suporte enterprise",
-      technologies: ["RHEL", "Docker", "Kubernetes"],
+      technologies: ["Ubuntu Server", "Debian", "SUSE AlmaLinux(CentOS)"],
       metrics: "100% estabilidade",
       color: "jiga-green"
     }

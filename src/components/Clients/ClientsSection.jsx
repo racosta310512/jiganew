@@ -84,7 +84,7 @@ const ClientsSection = () => {
         {/* Client Carousel */}
         <ClientCarousel logos={clientLogos} />
 
-        {/* Testimonials */}
+        {/* Testimonials 
         <div className="mt-16">
           <h3 className="text-3xl font-bold text-white text-center mb-12">
             O que dizem sobre nós
@@ -96,7 +96,7 @@ const ClientsSection = () => {
                 key={testimonial.id}
                 className="glass-effect rounded-2xl p-6 transform hover:scale-105 transition-all duration-500"
               >
-                {/* Rating */}
+                {/* Rating 
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
                     <span
@@ -108,20 +108,20 @@ const ClientsSection = () => {
                       ★
                     </span>
                   ))}
-                </div>
+                </div> 
 
-                {/* Content */}
+                {/* Content 
                 <p className="text-gray-300 mb-6 leading-relaxed italic">
                   "{testimonial.content}"
                 </p>
 
-                {/* Project */}
+                {/* Project 
                 <div className="mb-4">
                   <span className="text-sm text-gray-400">Projeto:</span>
                   <div className="text-jiga-green font-semibold">{testimonial.project}</div>
                 </div>
 
-                {/* Author */}
+                {/* Author 
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-jiga-blue rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">
@@ -136,7 +136,7 @@ const ClientsSection = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Partnership Stats */}
         <div className="mt-16 glass-effect rounded-2xl p-8 max-w-4xl mx-auto">

@@ -38,10 +38,30 @@ const AboutSection = () => {
         {/* Values Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {[
-            { title: "Credibilidade", icon: "⭐", color: "text-electric-yellow" },
-            { title: "Confiança", icon: "🤝", color: "text-jiga-blue" },
-            { title: "Segurança", icon: "🛡️", color: "text-security-orange" },
-            { title: "Inovação", icon: "💡", color: "text-jiga-green" }
+            { 
+              title: "Credibilidade", 
+              icon: "⭐", 
+              color: "text-electric-yellow",
+              description: "Com credibilidade, transformamos a incerteza em clareza. Você foca no seu negócio, nós cuidamos da sua tecnologia."
+            },
+            { 
+              title: "Confiança", 
+              icon: "🤝", 
+              color: "text-jiga-blue",
+              description: "Mais do que tecnologia, entregamos parceria sólida. A confiança é o nosso código-fonte, e a credibilidade, a nossa arquitetura"
+            },
+            { 
+              title: "Segurança", 
+              icon: "🛡️", 
+              color: "text-security-orange",
+              description: "Segurança e Proteção é a nossa fundação. Integramos proteção robusta para que sua confiança no futuro digital seja absoluta."
+            },
+            { 
+              title: "Inovação", 
+              icon: "💡", 
+              color: "text-jiga-green",
+              description: "Você não precisa arriscar para inovar. Integramos o que há de mais novo no mercado com credibilidade e suporte que o seu negócio precisa."
+            }
           ].map((value, index) => (
             <div 
               key={index}
@@ -50,7 +70,7 @@ const AboutSection = () => {
               <div className={`text-3xl mb-4 ${value.color}`}>{value.icon}</div>
               <h4 className="text-xl font-semibold text-white mb-2">{value.title}</h4>
               <p className="text-gray-400">
-                Queremos compartilhar nossos valores com todos os clientes
+                {value.description}
               </p>
             </div>
           ))}

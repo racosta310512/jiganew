@@ -46,8 +46,8 @@ const NetworkMap = () => {
 
   const nodes = [
     { id: 1, title: "Data Center Principal", type: "datacenter", position: { x: "50%", y: "15%" }, status: "active", connections: ["2", "3", "5"] },
-    { id: 2, title: "Cloud AWS", type: "cloud", position: { x: "20%", y: "35%" }, status: "active", connections: ["1", "5"] },
-    { id: 3, title: "Cloud Azure", type: "cloud", position: { x: "80%", y: "35%" }, status: "active", connections: ["1", "5"] },
+    { id: 2, title: "Brasil - UNDER Cloud", type: "cloud", position: { x: "20%", y: "35%" }, status: "active", connections: ["1", "5"] },
+    { id: 3, title: "USA Cloud", type: "cloud", position: { x: "80%", y: "35%" }, status: "active", connections: ["1", "5"] },
     { id: 4, title: "Backup Site", type: "backup", position: { x: "35%", y: "70%" }, status: "active", connections: ["5"] },
     { id: 5, title: "Client Network", type: "client", position: { x: "65%", y: "85%" }, status: "active", connections: ["2", "3", "4"] }
   ]

@@ -33,7 +33,7 @@ const ProductShowroom = ({ products }) => {
         {products.map((product, index) => (
           <div
             key={product.id}
-            className="product-item glass-effect rounded-2xl p-6 transform hover:scale-105 transition-all duration-500 cursor-pointer"
+            className="product-item glass-effect rounded-2xl p-6 transform hover:scale-105 transition-all duration-500 cursor-pointer flex flex-col h-full"
             onClick={() => setSelectedProduct(product)}
           >
             {/* Product Icon */}
@@ -52,18 +52,18 @@ const ProductShowroom = ({ products }) => {
             </p>
             
             {/* Specifications */}
-            <div className="space-y-2">
+            <div className="space-y-2 flex-1">
               {product.specs.map((spec, idx) => (
                 <div key={idx} className="flex items-center space-x-2">
-                  <div className="w-1.5 h-1.5 bg-jiga-green rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-jiga-green rounded-full flex-shrink-0"></div>
                   <span className="text-sm text-gray-400">{spec}</span>
                 </div>
               ))}
             </div>
             
-            {/* View Details */}
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <button className="text-jiga-green font-semibold hover:text-jiga-blue transition-colors">
+            {/* View Details - FIXED ALIGNMENT */}
+            <div className="mt-6 pt-4 border-t border-white/10">
+              <button className="w-full text-jiga-green font-semibold hover:text-jiga-blue transition-colors text-center py-2">
                 Ver Detalhes →
               </button>
             </div>
@@ -96,7 +96,7 @@ const ProductShowroom = ({ products }) => {
                 <ul className="space-y-2">
                   {selectedProduct.specs.map((spec, idx) => (
                     <li key={idx} className="flex items-center space-x-3">
-                      <div className="w-2 h-2 bg-jiga-blue rounded-full"></div>
+                      <div className="w-2 h-2 bg-jiga-blue rounded-full flex-shrink-0"></div>
                       <span className="text-gray-300">{spec}</span>
                     </li>
                   ))}
