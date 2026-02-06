@@ -5,7 +5,7 @@ export const CONTACT_INFO = [
   {
     icon: 'whatsapp',
     title: 'WhatsApp Direto',
-    value: '+55 (41) 3322-3231',
+    value: '+55 (41) 9787-7250',
     color: 'jiga-green'
   },
   {
@@ -32,7 +32,7 @@ export const CONTACT_METHODS = [
   {
     icon: 'message-circle',
     title: 'WhatsApp',
-    value: '+55 (41) 3322-3231',
+    value: '+55 (41) 9787-7250',
     color: 'jiga-green',
     description: 'Resposta imediata. Conversa direta e rápida.',
   },
@@ -46,7 +46,7 @@ export const CONTACT_METHODS = [
 ]
 
 // Números de contacto
-export const WHATSAPP_NUMBER = '554133223231'
+export const WHATSAPP_NUMBER = '554197877250'
 export const PHONE_NUMBER = '554133223231'
 export const EMAIL = 'contato@jigasolucoes.com.br'
 export const ADDRESS = 'Rua Martim Afonso, 2041 - Bigorrilho, Curitiba/PR'

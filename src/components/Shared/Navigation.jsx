@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import logo1 from '../../assets/logojiga1.png'
+import { FaWhatsapp } from 'react-icons/fa'
 
 
 const Navigation = () => {
@@ -75,19 +76,29 @@ const Navigation = () => {
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-jiga-green transition-all duration-300 group-hover:w-full"></span>
               </button>
+              
 
             ))}
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:flex items-center gap-4">
             <button 
               onClick={() => scrollToSection('#contato')}
-              className="px-6 py-2 bg-jiga-green text-white font-semibold rounded-lg hover:bg-jiga-blue transition-all duration-300 hover:scale-105"
+              className="px-6 py-3 bg-jiga-green text-white font-semibold rounded-lg hover:bg-jiga-blue transition-all duration-300 hover:scale-105"
             >
               Fale Conosco
             </button>
-
+            
+            <a
+              href={`https://wa.me/554197877250?text=${encodeURIComponent('*Contato via site jigasolucoes.com.br*')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 rounded-full bg-gradient-to-r from-jiga-green to-jiga-blue text-white hover:shadow-lg hover:shadow-jiga-green/30 transition-all duration-300 hover:scale-110"
+              aria-label="Contato via WhatsApp"
+            >
+              <FaWhatsapp className="text-lg" />
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -133,6 +144,15 @@ const Navigation = () => {
               >
                 Fale Conosco
               </button>
+              <a
+                href="https://wa.me/5541998796698"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-item p-3 rounded-full bg-gradient-to-r from-happy-green to-happy-teal text-white hover:shadow-happy transition-all duration-300 hover:scale-110"
+                aria-label="Contato via WhatsApp"
+              >
+                <FaWhatsapp />
+              </a>
 
           </div>
         </div>

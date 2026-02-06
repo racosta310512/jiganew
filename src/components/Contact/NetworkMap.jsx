@@ -5,9 +5,6 @@ const NetworkMap = () => {
 
   return (
     <div className="glass-effect rounded-2xl p-6">
-      <h4 className="text-lg font-semibold text-white mb-4">
-        Nossa Localização
-      </h4>
 
       {/* Contenedor del mapa */}
       <div className="rounded-lg overflow-hidden shadow-lg border-2 border-jiga-blue/30 max-w-xl mx-auto">

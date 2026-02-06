@@ -78,7 +78,7 @@ const ContactLeftPanel = ({ contactInfo, address }) => {
   const getAction = (title) => {
     switch(title) {
       case 'WhatsApp Direto':
-        return 'https://wa.me/554133223231'
+        return 'https://wa.me/554197877250'
       case 'Email Corporativo':
         return 'mailto:contato@jigasolucoes.com.br'
       case 'Telefone':
